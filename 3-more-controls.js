@@ -2,8 +2,8 @@ if ("speechSynthesis" in window) {
   // (A) GET HTML ELEMENTS
   let demo = document.getElementById("demoC"),
       vvol = document.getElementById("demoC-vol"),
-      vpitch = document.getElementById("demoC-pitch"),
-      vrate = document.getElementById("demoC-rate"),
+      vlevel = document.getElementById("demoC-level"),
+      vspeed = document.getElementById("demoC-speed"),
       vmsg = document.getElementById("demoC-msg"),
       vgo = document.getElementById("demoC-go");
 
@@ -13,8 +13,8 @@ if ("speechSynthesis" in window) {
     msg.voice = speechSynthesis.getVoices()[0];
     msg.text = vmsg.value;
     msg.volume = +vvol.value;
-  	msg.pitch = +vpitch.value;
-    msg.rate = +vrate.value;
+  	msg.level = +vlevel.value;
+    msg.speed = +vspeed.value;
     speechSynthesis.speak(msg);
     return false;
   };
