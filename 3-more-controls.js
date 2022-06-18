@@ -15,6 +15,7 @@ if ("speechSynthesis" in window) {
     msg.volume = +vvol.value;
   	msg.level = +vlevel.value;
     msg.speed = +vspeed.value;
+    console.log(msg.getVoices);
     speechSynthesis.speak(msg);
     return false;
   };
