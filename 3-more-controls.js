@@ -6,15 +6,19 @@ if ("speechSynthesis" in window) {
       vspeed = document.getElementById("demoC-speed"),
       vmsg = document.getElementById("demoC-msg"),
       vgo = document.getElementById("demoC-go");
-
+      vvoice = document.querySelector("data-lang");
+      console.log(vvoice);
   // (B) SPEAK
   var speak = () => {
     let msg = new SpeechSynthesisUtterance();
-    msg.voice = speechSynthesis.getVoices()[0];
+    msg.voice = speechSynthesis.getVoices()[1];
     msg.text = vmsg.value;
     msg.volume = +vvol.value;
   	msg.level = +vlevel.value;
     msg.speed = +vspeed.value;
+
+    // msg.voice = +vvoice.value;
+    // msg.lang = +vvoice.value;
     console.log(msg.getVoices);
     speechSynthesis.speak(msg);
     return false;
